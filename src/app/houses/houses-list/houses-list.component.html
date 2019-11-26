@@ -1,0 +1,26 @@
+
+<ion-searchbar
+  [(ngModel)]="searchTerm"
+  (ionChange)="filterItems()"
+></ion-searchbar>
+
+<ion-list>
+  <ion-item
+    button
+    *ngFor="let house of filteredHouses"
+    (click)='showDetail(house)'
+  >
+    <ion-label>
+      <h2>{{house.name}}</h2>
+      <h3>{{house.region}}</h3>
+      <p>{{house.words}}</p>
+    </ion-label>
+
+    <ion-icon
+      *ngIf="house.diedOut.length > 0"
+      slot="end"
+      name="heart-dislike"
+    ></ion-icon>
+
+  </ion-item>
+</ion-list>

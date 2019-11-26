@@ -1,0 +1,46 @@
+
+<ion-card>
+  <ion-card-header>
+    <ion-card-subtitle>{{_house?.words }}</ion-card-subtitle>
+    <ion-card-title>{{_house?.name }}</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    {{_house?.coatOfArms}}
+  </ion-card-content>
+</ion-card>
+
+<ion-item>
+  <ion-icon name="pin" slot="start"></ion-icon>
+  <ion-label>{{_house?.region}}</ion-label>
+  <ion-icon
+    slot="end"
+    tooltip="died out in {{_house.diedOut}}"
+    positionV="bottom"
+    positionH="right"
+    *ngIf="_house.diedOut"
+    name="heart-dislike"
+  ></ion-icon>
+</ion-item>
+
+<ion-list>
+  <ion-list-header>
+    <ion-label>Titles</ion-label>
+  </ion-list-header>
+  <ion-item *ngFor="let title of _house?.titles">
+    <ion-label>{{title}}</ion-label>
+  </ion-item>
+</ion-list>
+
+<ion-list>
+  <ion-list-header>
+    <ion-label>Seats</ion-label>
+  </ion-list-header>
+  <ion-item *ngFor="let seat of _house?.seats">
+    <ion-label>{{seat}}</ion-label>
+  </ion-item>
+</ion-list>
+
+
+
+
+
